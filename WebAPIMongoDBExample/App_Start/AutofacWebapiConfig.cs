@@ -28,11 +28,13 @@ namespace WebAPIMongoDBExample.App_Start
             builder.RegisterType<UtilizacaoRepository>().As<IUtilizacaoRepository>().InstancePerRequest();
             builder.RegisterType<ImobilizadoRepository>().As<IImobilizadoRepository>().InstancePerRequest();
             builder.RegisterType<TipoImobilizadoRepository>().As<ITipoImobilizadoRepository>().InstancePerRequest();
-            
+            builder.RegisterType<EscolaRepository>().As<IEscolaRepository>().InstancePerRequest();
+
             builder.RegisterType<DisponibilidadeNegocio>().As<IDisponibilidadeNegocio>().InstancePerRequest();
             builder.RegisterType<ImobilizadoNegocio>().As<IImobilizadoNegocio>().InstancePerRequest();
             builder.RegisterType<TipoImobilizadoNegocio>().As<ITipoImobilizadoNegocio>().InstancePerRequest();
             builder.RegisterType<UtilizacaoNegocio>().As<IUtilizacaoNegocio>().InstancePerRequest();
+            builder.RegisterType<EscolaNegocio>().As<IEscolaNegocio>().InstancePerRequest();
 
             Container = builder.Build();
             return Container;
