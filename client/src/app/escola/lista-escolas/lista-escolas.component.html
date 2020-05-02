@@ -1,0 +1,24 @@
+<div *ngIf="escolas" class="table-center">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Turmas</th>
+                <th>Alterar</th>
+                <th>Apagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let escola of escolas'>
+                <td>{{escola?.id}}</td>
+                <td>{{escola?.nome}}</td>
+                <td>{{escola?.endereco}}</td>
+                <td><a [routerLink]="['/escola', escola.id, 'turma']" routerLinkActive="active">Ver Turmas</a></td>
+                <td><button>Alterar</button></td>
+                <td><button>Apagar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
