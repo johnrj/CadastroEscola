@@ -12,7 +12,7 @@ export class ListaEscolasComponent implements OnInit {
 
   constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router) { }
 
-  public getEscolas = () => {
+  getEscolas = () => {
     let route: string = 'https://localhost:5001/api/escola';
     this.httpService.getData(route)
       .subscribe((res) => {
@@ -20,9 +20,14 @@ export class ListaEscolasComponent implements OnInit {
       });
   }
 
-  public criarEscola = () => {
+  criarEscola = () => {
     this.router.navigate(['criar-escola']);
   }
+
+  // editarEscola = (escolaId: number) => {
+  //   alert('foi');
+  //   //this.router.navigate(['editar-escola', escolaId]);
+  // }
 
   ngOnInit(): void {
     this.getEscolas();

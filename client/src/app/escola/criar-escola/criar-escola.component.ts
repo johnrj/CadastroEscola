@@ -26,4 +26,8 @@ export class CriarEscolaComponent implements OnInit {
         this.router.navigate(['criar-escola']);
       });
   }
+
+  cancelar = () => {
+    this.router.navigate(['escola']);
+  }
 }
