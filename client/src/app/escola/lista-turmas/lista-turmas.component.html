@@ -1,26 +1,26 @@
-<button type="button">Adicionar Turma</button>
-<div *ngIf="turmas" class="table-center">
-    <table>
+<div *ngIf="turmas" class="col-md-12 user-container">
+    <h2 style="margin: auto"> Turmas da escola {{escola.nome}}</h2>
+    <button class="btn btn-success" (click)="criarTurma(escolaId)"> Cadastrar Turma</button>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>EscolaId</th>
                 <th>Número</th>
                 <th>Número de Alunos</th>
-                <th>Alterar</th>
-                <th>Apagar</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor='let turma of turmas'>
+            <tr *ngFor="let turma of turmas">
                 <td>{{turma?.id}}</td>
                 <td>{{turma?.escolaId}}</td>
                 <td>{{turma?.numero}}</td>
                 <td>{{turma?.numeroAlunos}}</td>
-                <td><button>Alterar</button></td>
-                <td><button>Apagar</button></td>
+                <td>
+                    <button class="btn btn-outline-danger" (click)="apagarTurma()">Apagar</button>
+                    <button class="btn btn-warning" (click)="editarTurma()" style="margin-left: 20px;">Editar</button>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
-<router-outlet></router-outlet>

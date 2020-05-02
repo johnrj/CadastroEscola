@@ -4,16 +4,8 @@ import { ListaEscolasComponent } from './escola/lista-escolas/lista-escolas.comp
 import { ListaTurmasComponent } from './escola/lista-turmas/lista-turmas.component';
 
 const routes: Routes = [
-  {
-    path: 'escola', component: ListaEscolasComponent, children: [
-      {
-        path: ':escolaId', component: ListaEscolasComponent, children: [
-          {
-            path: 'turma', component: ListaTurmasComponent
-          }
-        ]
-      }]
-  },
+  { path: 'escola', component: ListaEscolasComponent },
+  { path: 'escola/:escolaId/turma', component: ListaTurmasComponent }
 ];
 
 @NgModule({

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaEscolasComponent } from './escola/lista-escolas/lista-escolas.component';
 import { ListaTurmasComponent } from './escola/lista-turmas/lista-turmas.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaEscolasComponent,
-    ListaTurmasComponent
+    ListaTurmasComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
