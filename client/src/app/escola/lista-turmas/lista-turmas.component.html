@@ -1,6 +1,6 @@
 <div *ngIf="turmas" class="col-md-12 user-container">
     <h2 style="margin: auto"> Turmas da escola {{escola.nome}}</h2>
-    <button class="btn btn-success" (click)="criarTurma(escolaId)"> Cadastrar Turma</button>
+    <button class="btn btn-success"> Cadastrar Turma</button>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,8 +17,8 @@
                 <td>{{turma?.numero}}</td>
                 <td>{{turma?.numeroAlunos}}</td>
                 <td>
-                    <button class="btn btn-outline-danger" (click)="apagarTurma()">Apagar</button>
-                    <button class="btn btn-warning" (click)="editarTurma()" style="margin-left: 20px;">Editar</button>
+                    <button class="btn btn-outline-danger">Apagar</button>
+                    <button class="btn btn-warning" style="margin-left: 20px;">Editar</button>
                 </td>
             </tr>
         </tbody>

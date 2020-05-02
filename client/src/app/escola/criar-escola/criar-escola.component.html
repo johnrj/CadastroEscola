@@ -1,0 +1,17 @@
+<div class="col-md-12 user-container" style="margin-bottom: 20px;">
+    <h2 class="text-center">Adicionar Escola</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" formControlName="nome" placeholder="Nome da escola" class="form-control" id="nome">
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input formControlName="endereco" placeholder="Endereço da escola" class="form-control" id="endereco">
+        </div>
+
+        <button class="btn btn-success">Adicionar</button>
+        <button class="btn btn-danger" style="margin-left:10px;">Cancelar</button>
+    </form>
+</div>

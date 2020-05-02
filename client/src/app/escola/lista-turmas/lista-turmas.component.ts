@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Turma } from 'src/_interfaces/turma.model';
+import { Turma } from '../../model/turma.model';
 import { HttpService } from 'src/app/service.service';
-import { Escola } from 'src/_interfaces/escola.model';
+import { Escola } from '../../model/escola.model';
 
 @Component({
   templateUrl: './lista-turmas.component.html',
