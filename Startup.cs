@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using CadastroEscola.Models;
 
 namespace CadastroEscola
 {
@@ -28,6 +27,16 @@ namespace CadastroEscola
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CadastroEscolaContext>(opt => opt.UseInMemoryDatabase("CadastroEscola"));
+            services.AddTransient<IEscolaRepository, EscolaRepository>();
+            services.AddTransient<ITurmaRepository, TurmaRepository>();
+
+            services.AddTransient<IEscolaService, EscolaService>();
+            services.AddTransient<ITurmaService, TurmaService>();
+
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             services.AddControllers();
         }
 
@@ -43,7 +52,7 @@ namespace CadastroEscola
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
