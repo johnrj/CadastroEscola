@@ -33,4 +33,8 @@ export class ApiService {
     criarTurma(turma: Turma): Observable<Turma> {
         return this.http.post<Turma>(RotasApi.turma.replace(':escolaId', turma.escolaId), turma);
     }
+
+    apagarTurma(escolaId: string, turmaId: string): Observable<Turma> {
+        return this.http.delete<Turma>(RotasApi.turmaId.replace(':escolaId', escolaId).replace(':id', turmaId));
+    }
 }

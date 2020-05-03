@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Turma } from '../../model/turma.model';
 import { HttpService } from 'src/app/service.service';
 import { Escola } from '../../model/escola.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   templateUrl: './lista-turmas.component.html',
@@ -12,7 +13,7 @@ export class ListaTurmasComponent implements OnInit {
   public escolaId: number;
   public escola: Escola;
   public turmas: Turma[];
-  constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router, private apiService: ApiService) { }
 
   private getEscola = () => {
     let route: string = `https://localhost:5001/api/escola/${this.escolaId}`;
@@ -40,5 +41,13 @@ export class ListaTurmasComponent implements OnInit {
 
   adicionarTurma = () => {
     this.router.navigate(['criar-turma', this.escolaId]);
+  }
+
+  apagarTurma = (value) => {
+    this.apiService.apagarTurma(this.escolaId.toString(), value)
+      .subscribe(res => {
+        alert(`Turma ${res.numero} apagada com sucesso.`);
+        this.getTurmas();
+      });
   }
 }

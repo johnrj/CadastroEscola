@@ -6,7 +6,6 @@ import { CriarEscolaComponent } from './escola/criar-escola/criar-escola.compone
 import { EditarEscolaComponent } from './escola/editar-escola/editar-escola.component';
 import { CriarTurmaComponent } from './escola/criar-turma/criar-turma.component';
 import { EditarTurmaComponent } from './escola/editar-turma/editar-turma.component';
-import { ApagarTurmaComponent } from './escola/apagar-turma/apagar-turma.component';
 
 const routes: Routes = [
   { path: 'escola', component: ListaEscolasComponent },
@@ -14,8 +13,7 @@ const routes: Routes = [
   { path: 'editar-escola/:escolaId', component: EditarEscolaComponent },
   { path: 'escola/:escolaId/turma', component: ListaTurmasComponent },
   { path: 'criar-turma/:escolaId', component: CriarTurmaComponent },
-  { path: 'editar-turma/:id', component: EditarTurmaComponent },
-  { path: 'apagar-turma/:id', component: ApagarTurmaComponent }
+  { path: 'editar-turma/:id', component: EditarTurmaComponent }
 ];
 
 @NgModule({

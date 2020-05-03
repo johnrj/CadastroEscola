@@ -15,7 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './services/api.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "./core/interceptor";
-import { ApagarTurmaComponent } from './escola/apagar-turma/apagar-turma.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import { ApagarTurmaComponent } from './escola/apagar-turma/apagar-turma.compone
     CriarEscolaComponent,
     EditarEscolaComponent,
     EditarTurmaComponent,
-    CriarTurmaComponent,
-    ApagarTurmaComponent
+    CriarTurmaComponent
   ],
   imports: [
     BrowserModule,

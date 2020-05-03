@@ -3,4 +3,5 @@ export class RotasApi {
     static escola: string = `${RotasApi.baseUrl}/escola`;
     static escolaId: string = `${RotasApi.baseUrl}/escola/:escolaId`;
     static turma: string = `${RotasApi.baseUrl}/escola/:escolaId/turma`;
+    static turmaId: string = `${RotasApi.baseUrl}/escola/:escolaId/turma/:id`;
 }
