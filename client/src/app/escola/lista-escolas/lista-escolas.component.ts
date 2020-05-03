@@ -2,21 +2,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Escola } from '../../model/escola.model';
 import { HttpService } from 'src/app/service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   templateUrl: './lista-escolas.component.html',
   styleUrls: ['./lista-escolas.component.css']
 })
 export class ListaEscolasComponent implements OnInit {
+  constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router, private apiService: ApiService) { }
   public escolas: Escola[];
 
-  constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router) { }
-
   getEscolas = () => {
-    let route: string = 'https://localhost:5001/api/escola';
-    this.httpService.getData(route)
-      .subscribe((res) => {
-        this.escolas = res as Escola[];
+    this.apiService.getEscolas()
+      .subscribe((data) => {
+        this.escolas = data as Escola[];
       });
   }
 
@@ -24,10 +23,13 @@ export class ListaEscolasComponent implements OnInit {
     this.router.navigate(['criar-escola']);
   }
 
-  // editarEscola = (escolaId: number) => {
-  //   alert('foi');
-  //   //this.router.navigate(['editar-escola', escolaId]);
-  // }
+  editarEscola = (value) => {
+    this.router.navigate(['editar-escola', value])
+  }
+
+  apagarEscola = (value) => {
+    this.router.navigate(['apagar-escola', value])
+  }
 
   ngOnInit(): void {
     this.getEscolas();

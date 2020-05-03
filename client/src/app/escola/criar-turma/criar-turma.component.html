@@ -1,1 +1,25 @@
-<p>criar-turma works!</p>
+<div class="col-md-12 user-container" style="margin-bottom: 20px;">
+    <div style="margin-top: 5px;">
+        <div class="row">
+            <div class="col-sm-10 col-12">
+                <h3>Criar Turma</h3>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="numero">Número:</label>
+            <input type="text" formControlName="numero" placeholder="Número da turma" class="form-control" id="numero">
+        </div>
+
+        <div class="form-group">
+            <label for="numeroAlunos">Número de Alunos:</label>
+            <input type="text" formControlName="numeroAlunos" placeholder="Número de alunos na turma" class="form-control" id="numeroAlunos">
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-success">Criar</button>
+            <button class="btn btn-danger" style="margin-left:30px;" (click)="cancelar()">Cancelar</button>
+        </div>
+    </form>
+</div>

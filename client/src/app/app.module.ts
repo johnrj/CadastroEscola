@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './services/api.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "./core/interceptor";
+import { ApagarTurmaComponent } from './escola/apagar-turma/apagar-turma.component';
+import { ApagarEscolaComponent } from './escola/apagar-escola/apagar-escola.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TokenInterceptor } from "./core/interceptor";
     CriarEscolaComponent,
     EditarEscolaComponent,
     EditarTurmaComponent,
-    CriarTurmaComponent
+    CriarTurmaComponent,
+    ApagarTurmaComponent,
+    ApagarEscolaComponent
   ],
   imports: [
     BrowserModule,

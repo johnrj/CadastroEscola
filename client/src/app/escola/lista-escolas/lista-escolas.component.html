@@ -16,8 +16,8 @@
                 <td>{{escola?.endereco}}</td>
                 <td>
                     <a href="/escola/{{escola?.id}}/turma">Ver turmas</a>
-                    <button class="btn btn-outline-danger" (click)="editarEscola(escola?.id)" style="margin-left: 20px;">Apagar</button>
-                    <button class="btn btn-warning" style="margin-left: 20px;">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="apagarEscola(escola?.id)" style="margin-left: 20px;">Apagar</button>
+                    <button class="btn btn-warning" (click)="editarEscola(escola?.id)" style="margin-left: 20px;">Editar</button>
                 </td>
             </tr>
         </tbody>
