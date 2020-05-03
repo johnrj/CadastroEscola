@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'editar-escola/:escolaId', component: EditarEscolaComponent },
   { path: 'escola/:escolaId/turma', component: ListaTurmasComponent },
   { path: 'criar-turma/:escolaId', component: CriarTurmaComponent },
-  { path: 'editar-turma/:id', component: EditarTurmaComponent }
+  { path: 'editar-turma/:escolaId/:turmaId', component: EditarTurmaComponent }
 ];
 
 @NgModule({

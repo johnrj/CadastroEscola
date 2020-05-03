@@ -1,1 +1,30 @@
-<p>editar-turma works!</p>
+<div class="col-md-12 user-container" style="margin-bottom: 20px;">
+    <div style="margin-top: 5px;">
+        <div class="row">
+            <div class="col-sm-10 col-12">
+                <h2>Editar Turma {{turma?.numero}}</h2>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div hidden>
+            <input type="text" formControlName="id" value="{{turma?.id}}" class="form-control" id="id">
+            <input type="text" formControlName="escolaId" value="{{turma?.escolaId}}" class="form-control" id="escolaId">
+        </div>
+
+        <div class="form-group">
+            <label for="numero">Número da Turma:</label>
+            <input type="text" formControlName="numero" value="{{turma?.numero}}" placeholder="NÚmero da turma" class="form-control" id="numero">
+        </div>
+
+        <div class="form-group">
+            <label for="numeroAlunos">Número de Alunos:</label>
+            <input type="text" formControlName="numeroAlunos" value="{{turma?.numeroAlunos}}" placeholder="Número de alunos da turma" class="form-control" id="numeroAlunos">
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-success">Alterar</button>
+            <button class="btn btn-danger" style="margin-left:30px;" (click)="cancelar()">Cancelar</button>
+        </div>
+    </form>
+</div>

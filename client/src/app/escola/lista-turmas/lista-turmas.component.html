@@ -26,7 +26,7 @@
                 <td>{{turma?.numeroAlunos}}</td>
                 <td style="text-align: right;">
                     <button class="btn btn-outline-danger" (click)="apagarTurma(turma?.id)">Apagar</button>
-                    <button class="btn btn-warning" style="margin-left: 20px;">Editar</button>
+                    <button class="btn btn-warning" (click)="editarTurma(turma?.escolaId, turma?.id)" style="margin-left: 20px;">Editar</button>
                 </td>
             </tr>
         </tbody>

@@ -16,16 +16,14 @@ export class ListaTurmasComponent implements OnInit {
   constructor(private httpService: HttpService, private route: ActivatedRoute, private router: Router, private apiService: ApiService) { }
 
   private getEscola = () => {
-    let route: string = `https://localhost:5001/api/escola/${this.escolaId}`;
-    this.httpService.getData(route)
+    this.apiService.getEscolaById(this.escolaId.toString())
       .subscribe((res) => {
         this.escola = res as Escola;
       });
   }
 
   public getTurmas = () => {
-    let route: string = `https://localhost:5001/api/escola/${this.escolaId}/turma`;
-    this.httpService.getData(route)
+    this.apiService.getTurmas(this.escolaId.toString())
       .subscribe((res) => {
         this.turmas = res as Turma[];
       })
@@ -49,5 +47,9 @@ export class ListaTurmasComponent implements OnInit {
         alert(`Turma ${res.numero} apagada com sucesso.`);
         this.getTurmas();
       });
+  }
+
+  editarTurma = (escolaId: Number, turmaId: Number) => {
+    this.router.navigate(['editar-turma', escolaId, turmaId]);
   }
 }

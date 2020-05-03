@@ -22,7 +22,7 @@
                 <td>{{escola?.id}}</td>
                 <td>{{escola?.nome}}</td>
                 <td>{{escola?.endereco}}</td>
-                <td>
+                <td style="text-align: right;">
                     <a href="/escola/{{escola?.id}}/turma">Ver turmas</a>
                     <button class="btn btn-warning" (click)="editarEscola(escola?.id)" style="margin-left: 20px;">Editar</button>
                     <button class="btn btn-outline-danger" (click)="apagarEscola(escola?.id)" style="margin-left: 20px;">Apagar</button>
