@@ -36,6 +36,6 @@ export class CriarTurmaComponent implements OnInit {
   }
 
   cancelar = () => {
-    this.router.navigate(['escola']);
+    this.router.navigate(['escola', this.escolaId, 'turma']);
   }
 }
