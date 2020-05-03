@@ -37,4 +37,8 @@ export class ListaTurmasComponent implements OnInit {
       this.getTurmas();
     });
   }
+
+  adicionarTurma = () => {
+    this.router.navigate(['criar-turma', this.escolaId]);
+  }
 }

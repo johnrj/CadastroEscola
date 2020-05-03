@@ -1,7 +1,15 @@
 <div *ngIf="escolas" class="col-md-12 user-container">
-    <h2 style="margin: auto"> Lista de Escolas</h2>
-    <button class="btn btn-success" (click)="criarEscola()"> Cadastrar Escola</button>
-    <table class="table table-striped">
+    <div style="margin-top: 5px;">
+        <div class="row">
+            <div class="col-sm-10 col-12">
+                <h3>Lista de Escolas</h3>
+            </div>
+            <div class="col-sm-2 col-12">
+                <button type="button" class="btn btn-outline-primary pull-right" (click)="criarEscola()">Cadastrar Escola</button>
+            </div>
+        </div>
+    </div>
+    <table *ngIf="escolas && escolas.length > 0" class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -16,8 +24,8 @@
                 <td>{{escola?.endereco}}</td>
                 <td>
                     <a href="/escola/{{escola?.id}}/turma">Ver turmas</a>
-                    <button class="btn btn-outline-danger" (click)="apagarEscola(escola?.id)" style="margin-left: 20px;">Apagar</button>
                     <button class="btn btn-warning" (click)="editarEscola(escola?.id)" style="margin-left: 20px;">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="apagarEscola(escola?.id)" style="margin-left: 20px;">Apagar</button>
                 </td>
             </tr>
         </tbody>

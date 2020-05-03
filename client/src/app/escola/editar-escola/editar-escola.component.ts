@@ -38,7 +38,8 @@ export class EditarEscolaComponent implements OnInit {
       .subscribe(
         res => {
           alert('Escola atualizada com sucesso.');
-          this.router.navigate(['editar-escola', this.escolaId]);
+          this.apiService.getEscolaById(this.escolaId.toString())
+            .subscribe(data => this.editForm.setValue(data));
         },
         error => {
           alert('Erro ao atualizar escola.');

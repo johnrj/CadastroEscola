@@ -28,7 +28,11 @@ export class ListaEscolasComponent implements OnInit {
   }
 
   apagarEscola = (value) => {
-    this.router.navigate(['apagar-escola', value])
+    this.apiService.apagarEscola(value)
+      .subscribe(res => {
+        alert(`Escola ${res.nome} apagada com sucesso.`);
+        this.getEscolas();
+      });
   }
 
   ngOnInit(): void {

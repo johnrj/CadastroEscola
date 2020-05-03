@@ -16,7 +16,6 @@ import { ApiService } from './services/api.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "./core/interceptor";
 import { ApagarTurmaComponent } from './escola/apagar-turma/apagar-turma.component';
-import { ApagarEscolaComponent } from './escola/apagar-escola/apagar-escola.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { ApagarEscolaComponent } from './escola/apagar-escola/apagar-escola.comp
     EditarEscolaComponent,
     EditarTurmaComponent,
     CriarTurmaComponent,
-    ApagarTurmaComponent,
-    ApagarEscolaComponent
+    ApagarTurmaComponent
   ],
   imports: [
     BrowserModule,

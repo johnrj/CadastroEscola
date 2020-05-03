@@ -25,6 +25,11 @@ export class ApiService {
     atualizarEscola(escola: Escola, escolaId: string): Observable<Escola> {
         return this.http.put<Escola>(RotasApi.escolaId.replace(':escolaId', escolaId), escola);
     }
+
+    apagarEscola(escolaId: string): Observable<Escola> {
+        return this.http.delete<Escola>(RotasApi.escolaId.replace(':escolaId', escolaId));
+    }
+
     criarTurma(turma: Turma): Observable<Turma> {
         return this.http.post<Turma>(RotasApi.turma.replace(':escolaId', turma.escolaId), turma);
     }

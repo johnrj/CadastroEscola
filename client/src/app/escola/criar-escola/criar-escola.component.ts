@@ -23,7 +23,8 @@ export class CriarEscolaComponent implements OnInit {
   onSubmit() {
     this.apiService.criarEscola(this.addForm.value)
       .subscribe(data => {
-        this.router.navigate(['criar-escola']);
+        this.addForm.reset();
+        alert(`Escola ${data.nome} criada com sucesso.`);
       });
   }
 
